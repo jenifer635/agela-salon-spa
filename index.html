@@ -1,115 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Ángela Salón & Spa</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ángela Salón & Spa</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:#f5f5f5;
-      color:#222;
-      text-align:center;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  background:#f7f7f7;
+  color:#222;
+  text-align:center;
+}
 
-    header{
-      background:#ffffff;
-      padding:40px 20px;
-      box-shadow:0 4px 10px rgba(0,0,0,.1);
-    }
+/* HEADER */
+header{
+  background:#ffffff;
+  padding:40px 15px;
+}
+header img{
+  max-width:260px;
+}
+header h1{
+  color:#e91e63;
+  margin:20px 0 5px;
+}
+header p{
+  color:#555;
+}
 
-    header img{
-      max-width:260px;
-      width:90%;
-    }
+/* SECCIONES */
+section{
+  padding:40px 15px;
+}
+h2{
+  margin-bottom:20px;
+}
 
-    h1{
-      margin:20px 0 10px;
-      color:#d6336c;
-    }
+/* SERVICIOS */
+.services{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  max-width:1000px;
+  margin:auto;
+}
+.service{
+  background:#fff;
+  padding:15px 20px;
+  border-radius:16px;
+  text-decoration:none;
+  color:#222;
+  font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+.service:hover{
+  transform:scale(1.05);
+}
 
-    p{
-      margin:0;
-      color:#555;
-      font-size:16px;
-    }
+/* GALERÍA */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:15px;
+  max-width:1100px;
+  margin:auto;
+}
+video{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
 
-    section{
-      padding:40px 20px;
-    }
-
-    .videos{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap:16px;
-      max-width:1000px;
-      margin:auto;
-    }
-
-    video{
-      width:100%;
-      border-radius:14px;
-      background:#000;
-    }
-
-    /* BOTÓN WHATSAPP */
-    .whatsapp{
-      position:fixed;
-      right:20px;
-      bottom:20px;
-      background:#25D366;
-      color:white;
-      padding:14px 18px;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:bold;
-      box-shadow:0 10px 25px rgba(0,0,0,.3);
-      display:flex;
-      align-items:center;
-      gap:10px;
-      z-index:100;
-    }
-  </style>
+/* WHATSAPP FLOAT */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <!-- LOGO -->
-    <img src="logo.png" alt="Ángela Salón & Spa">
-    <h1>Ángela Salón & Spa</h1>
-    <p>Belleza, cuidado y bienestar</p>
-  </header>
+<header>
+  <img src="logo.png" alt="Ángela Salón & Spa">
+  <h1>Ángela Salón & Spa</h1>
+  <p>Belleza, cuidado y bienestar</p>
+</header>
 
-  <section>
-    <h2>Galería de trabajos</h2>
+<section>
+  <h2>Servicios</h2>
+  <div class="services">
+    <a class="service" target="_blank"
+      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💇‍♀️%20Quiero%20Corte%20y%20Peinado">
+      💇‍♀️ Corte y Peinado
+    </a>
 
-    <div class="videos">
-      <video src="video1.mp4" controls></video>
-      <video src="video2.mp4" controls></video>
-      <video src="video3.mp4" controls></video>
-      <video src="video4.mp4" controls></video>
-      <video src="video5.mp4" controls></video>
-      <video src="video6.mp4" controls></video>
-      <video src="video7.mp4" controls></video>
-      <video src="video8.mp4" controls></video>
-      <video src="video9.mp4" controls></video>
-      <video src="video10.mp4" controls></video>
-      <video src="video11.mp4" controls></video>
-    </div>
-  </section>
+    <a class="service" target="_blank"
+      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💄%20Quiero%20Maquillaje%20Profesional">
+      💄 Maquillaje Profesional
+    </a>
 
-  <!-- BOTÓN WHATSAPP -->
-  <a class="whatsapp"
-     href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💄%20Quiero%20reservar%20una%20cita"
-     target="_blank">
-     💬 WhatsApp
-  </a>
+    <a class="service" target="_blank"
+      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💅%20Manicure%20y%20Pedicure">
+      💅 Manicure y Pedicure
+    </a>
+
+    <a class="service" target="_blank"
+      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20✨%20Tratamientos%20Capilares">
+      ✨ Tratamientos Capilares
+    </a>
+
+    <a class="service" target="_blank"
+      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20🌿%20Spa%20y%20Relajaci%C3%B3n">
+      🌿 Spa y Relajación
+    </a>
+
+    <a class="service" target="_blank"
+      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20⭐%20Estilismo%20Profesional">
+      ⭐ Estilismo Profesional
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Galería de trabajos</h2>
+  <div class="gallery">
+    <video src="video1.mp4" controls></video>
+    <video src="video2.mp4" controls></video>
+    <video src="video3.mp4" controls></video>
+    <video src="video4.mp4" controls></video>
+    <video src="video5.mp4" controls></video>
+    <video src="video6.mp4" controls></video>
+    <video src="video7.mp4" controls></video>
+    <video src="video8.mp4" controls></video>
+    <video src="video9.mp4" controls></video>
+    <video src="video10.mp4" controls></video>
+    <video src="video11.mp4" controls></video>
+  </div>
+</section>
+
+<a class="whatsapp" target="_blank"
+href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💖%20Quiero%20informaci%C3%B3n">
+💬 WhatsApp
+</a>
 
 </body>
 </html>
-
-   
-     
