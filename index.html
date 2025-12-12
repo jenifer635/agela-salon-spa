@@ -1,159 +1,392 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ángela Salón & Spa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ángela Salón & Spa | Santa Anita</title>
 
-<style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  background:#f7f7f7;
-  color:#222;
-  text-align:center;
-}
+  <style>
+    :root{
+      --primary:#e91e63;
+      --primary2:#ff5a8a;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --bg:#f7f7fb;
+      --card:#ffffff;
+      --shadow:0 12px 30px rgba(0,0,0,.10);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color:var(--text);
+    }
 
-/* HEADER */
-header{
-  background:#ffffff;
-  padding:40px 15px;
-}
-header img{
-  max-width:260px;
-}
-header h1{
-  color:#e91e63;
-  margin:20px 0 5px;
-}
-header p{
-  color:#555;
-}
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0;
+      z-index:50;
+      background:rgba(255,255,255,.92);
+      backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(0,0,0,.06);
+    }
+    .topbar .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand b{font-size:16px;}
+    .brand small{color:var(--muted); font-size:12px;}
 
-/* SECCIONES */
-section{
-  padding:40px 15px;
-}
-h2{
-  margin-bottom:20px;
-}
+    nav a{
+      text-decoration:none;
+      color:var(--text);
+      font-weight:700;
+      font-size:13px;
+      margin-left:14px;
+    }
+    nav a:hover{color:var(--primary)}
 
-/* SERVICIOS */
-.services{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-  max-width:1000px;
-  margin:auto;
-}
-.service{
-  background:#fff;
-  padding:15px 20px;
-  border-radius:16px;
-  text-decoration:none;
-  color:#222;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
-}
-.service:hover{
-  transform:scale(1.05);
-}
+    /* Hero */
+    header{
+      max-width:1100px;
+      margin:0 auto;
+      padding:46px 16px 10px;
+      text-align:center;
+    }
+    header img{
+      width:min(320px,90%);
+      max-width:320px;
+      display:block;
+      margin:0 auto 18px;
+    }
+    .headline{
+      font-size:34px;
+      margin:0 0 8px;
+      color:var(--primary);
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:0 auto 18px;
+      max-width:820px;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.4;
+    }
 
-/* GALERÍA */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:15px;
-  max-width:1100px;
-  margin:auto;
-}
-video{
-  width:100%;
-  border-radius:16px;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+    .btn{
+      border:none;
+      cursor:pointer;
+      padding:12px 18px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:800;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary{background:var(--primary); color:#fff;}
+    .btn-light{background:#fff; color:var(--text); border:1px solid rgba(0,0,0,.08);}
+    .btn:hover{transform:translateY(-1px)}
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:14px 18px;
-  border-radius:50px;
-  font-weight:bold;
-  text-decoration:none;
-  box-shadow:0 10px 25px rgba(0,0,0,.3);
-}
-</style>
+    /* Sections */
+    .container{max-width:1100px; margin:0 auto; padding:0 16px 80px;}
+    .section-title{
+      text-align:center;
+      color:var(--primary);
+      margin:42px 0 10px;
+      font-size:26px;
+    }
+    .section-desc{
+      text-align:center;
+      color:var(--muted);
+      margin:0 auto 18px;
+      max-width:820px;
+      line-height:1.5;
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      border:1px solid rgba(0,0,0,.06);
+    }
+
+    /* Services */
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .service{
+      padding:16px;
+      text-decoration:none;
+      color:var(--text);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      transition:transform .15s ease;
+    }
+    .service:hover{transform:translateY(-3px)}
+    .ico{
+      width:44px; height:44px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:rgba(233,30,99,.12);
+      font-size:20px;
+      flex:0 0 auto;
+    }
+    .service h3{margin:0 0 6px; font-size:16px;}
+    .service p{margin:0; color:var(--muted); font-size:13px; line-height:1.35;}
+
+    /* Gallery Photos */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      gap:14px;
+      margin-top:14px;
+    }
+    .gallery img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+      border-radius:16px;
+      box-shadow: var(--shadow);
+      background:#ddd;
+    }
+
+    /* Contact / Map */
+    .grid-2{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width:900px){
+      .grid-2{grid-template-columns:1fr}
+      nav{display:none}
+      .headline{font-size:28px}
+    }
+    .pad{padding:18px}
+    .list{margin:0; padding-left:18px; color:var(--muted); line-height:1.7;}
+    .mini{color:var(--muted); font-size:12px; margin-top:10px}
+
+    iframe{
+      width:100%;
+      height:300px;
+      border:0;
+      border-radius:16px;
+    }
+
+    /* WhatsApp floating */
+    .wsp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      padding:14px 16px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 12px 30px rgba(0,0,0,.25);
+      z-index:100;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:24px 16px;
+      background:#fff;
+      border-top:1px solid rgba(0,0,0,.06);
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="Ángela Salón & Spa">
-  <h1>Ángela Salón & Spa</h1>
-  <p>Belleza, cuidado y bienestar</p>
-</header>
-
-<section>
-  <h2>Servicios</h2>
-  <div class="services">
-    <a class="service" target="_blank"
-      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💇‍♀️%20Quiero%20Corte%20y%20Peinado">
-      💇‍♀️ Corte y Peinado
-    </a>
-
-    <a class="service" target="_blank"
-      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💄%20Quiero%20Maquillaje%20Profesional">
-      💄 Maquillaje Profesional
-    </a>
-
-    <a class="service" target="_blank"
-      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💅%20Manicure%20y%20Pedicure">
-      💅 Manicure y Pedicure
-    </a>
-
-    <a class="service" target="_blank"
-      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20✨%20Tratamientos%20Capilares">
-      ✨ Tratamientos Capilares
-    </a>
-
-    <a class="service" target="_blank"
-      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20🌿%20Spa%20y%20Relajaci%C3%B3n">
-      🌿 Spa y Relajación
-    </a>
-
-    <a class="service" target="_blank"
-      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20⭐%20Estilismo%20Profesional">
-      ⭐ Estilismo Profesional
-    </a>
+  <div class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <b>Ángela Salón & Spa</b>
+        <small>Santa Anita · Reserva por WhatsApp</small>
+      </div>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </div>
-</section>
 
-<section>
-  <h2>Galería de trabajos</h2>
-  <div class="gallery">
-    <video src="video1.mp4" controls></video>
-    <video src="video2.mp4" controls></video>
-    <video src="video3.mp4" controls></video>
-    <video src="video4.mp4" controls></video>
-    <video src="video5.mp4" controls></video>
-    <video src="video6.mp4" controls></video>
-    <video src="video7.mp4" controls></video>
-    <video src="video8.mp4" controls></video>
-    <video src="video9.mp4" controls></video>
-    <video src="video10.mp4" controls></video>
-    <video src="video11.mp4" controls></video>
+  <header>
+    <img src="logo.png" alt="Ángela Salón & Spa">
+    <h1 class="headline">Belleza con estilo, como una marca grande</h1>
+    <p class="sub">Cortes, peinados, manicure, maquillaje y tratamientos. Atención con cita y asesoría personalizada.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💖%20Quiero%20reservar%20una%20cita%20por%20favor.">
+        💬 Reservar por WhatsApp
+      </a>
+      <a class="btn btn-light" href="#servicios">✨ Ver servicios</a>
+      <a class="btn btn-light" href="#ubicacion">📍 Ver ubicación</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- SERVICIOS -->
+    <h2 id="servicios" class="section-title">Servicios</h2>
+    <p class="section-desc">Toca un servicio y te abre WhatsApp con el mensaje listo.</p>
+
+    <div class="services">
+      <a class="card service" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💇‍♀️%20Quiero%20Corte%20y%20Peinado.%20%C2%BFD%C3%ADa%20y%20hora%20disponible%3F">
+        <div class="ico">💇‍♀️</div>
+        <div>
+          <h3>Corte y Peinado</h3>
+          <p>Cortes, brushing, planchado, ondas y peinados para eventos.</p>
+        </div>
+      </a>
+
+      <a class="card service" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💄%20Quiero%20Maquillaje%20Profesional.%20%C2%BFD%C3%ADa%20y%20hora%20disponible%3F">
+        <div class="ico">💄</div>
+        <div>
+          <h3>Maquillaje Profesional</h3>
+          <p>Social, novia, quinceañera y sesiones de fotos.</p>
+        </div>
+      </a>
+
+      <a class="card service" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💅%20Quiero%20Manicure%20y%20Pedicure.%20%C2%BFD%C3%ADa%20y%20hora%20disponible%3F">
+        <div class="ico">💅</div>
+        <div>
+          <h3>Manicure y Pedicure</h3>
+          <p>Esmaltado, gel, diseños, limpieza y pedicure spa.</p>
+        </div>
+      </a>
+
+      <a class="card service" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20✨%20Quiero%20Tratamientos%20Capilares.%20%C2%BFD%C3%ADa%20y%20hora%20disponible%3F">
+        <div class="ico">✨</div>
+        <div>
+          <h3>Tratamientos Capilares</h3>
+          <p>Hidratación, reparación, botox capilar, keratina y más.</p>
+        </div>
+      </a>
+
+      <a class="card service" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20🌿%20Quiero%20Spa%20y%20Relajaci%C3%B3n.%20%C2%BFD%C3%ADa%20y%20hora%20disponible%3F">
+        <div class="ico">🌿</div>
+        <div>
+          <h3>Spa y Relajación</h3>
+          <p>Masajes, limpieza facial, relajación y bienestar.</p>
+        </div>
+      </a>
+
+      <a class="card service" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20⭐%20Quiero%20Estilismo%20Profesional.%20%C2%BFD%C3%ADa%20y%20hora%20disponible%3F">
+        <div class="ico">⭐</div>
+        <div>
+          <h3>Estilismo Profesional</h3>
+          <p>Asesoría de look completo y recomendaciones.</p>
+        </div>
+      </a>
+    </div>
+
+    <!-- GALERÍA DE FOTOS -->
+    <h2 id="galeria" class="section-title">Galería</h2>
+    <p class="section-desc">Sube tus fotos al repositorio y ponles estos nombres: <b>foto1.jpg</b>, <b>foto2.jpg</b>, <b>foto3.jpg</b>…</p>
+
+    <div class="gallery">
+      <img src="foto1.jpg" alt="Trabajo 1">
+      <img src="foto2.jpg" alt="Trabajo 2">
+      <img src="foto3.jpg" alt="Trabajo 3">
+      <img src="foto4.jpg" alt="Trabajo 4">
+      <img src="foto5.jpg" alt="Trabajo 5">
+      <img src="foto6.jpg" alt="Trabajo 6">
+    </div>
+
+    <!-- UBICACIÓN -->
+    <h2 id="ubicacion" class="section-title">Ubicación</h2>
+    <p class="section-desc">Santa Anita · Av. 1ro de Mayo 979, Urb. Achirana</p>
+
+    <div class="grid-2">
+      <div class="card pad">
+        <h3 style="margin-top:0;">📍 Dirección</h3>
+        <ul class="list">
+          <li><b>Dirección:</b> Av. 1ro de Mayo 979, Urb. Achirana</li>
+          <li><b>Distrito:</b> Santa Anita</li>
+          <li><b>WhatsApp:</b> 977 706 812</li>
+        </ul>
+
+        <a class="btn btn-primary" style="margin-top:14px" target="_blank"
+           href="https://www.google.com/maps/search/?api=1&query=Av.%201ro%20de%20Mayo%20979%20Urb.%20Achirana%20Santa%20Anita">
+          🗺️ Abrir en Google Maps
+        </a>
+
+        <p class="mini">Si quieres el pin exacto, me mandas el link de Google Maps y lo dejo perfecto.</p>
+      </div>
+
+      <div class="card pad">
+        <h3 style="margin-top:0;">🗺️ Mapa</h3>
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Av.%201ro%20de%20Mayo%20979%20Urb.%20Achirana%20Santa%20Anita&output=embed">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- CONTACTO -->
+    <h2 id="contacto" class="section-title">Contacto</h2>
+    <p class="section-desc">Escríbenos por WhatsApp y agenda tu cita.</p>
+
+    <div class="card pad" style="text-align:center">
+      <a class="btn btn-primary" target="_blank"
+         href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💖%20Quiero%20informaci%C3%B3n%20y%20agendar%20una%20cita.">
+        💬 WhatsApp: 977 706 812
+      </a>
+      <p class="mini">Atención con cita. Respuesta rápida.</p>
+    </div>
+
   </div>
-</section>
 
-<a class="whatsapp" target="_blank"
-href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💖%20Quiero%20informaci%C3%B3n">
-💬 WhatsApp
-</a>
+  <a class="wsp" target="_blank"
+     href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💖%20Quiero%20reservar%20una%20cita%20por%20favor.">
+    💬 WhatsApp
+  </a>
+
+  <footer>
+    © 2025 Ángela Salón & Spa · Santa Anita
+  </footer>
 
 </body>
 </html>
