@@ -24,7 +24,7 @@
       color:var(--text);
     }
 
-    /* Top bar */
+    /* TOP BAR */
     .topbar{
       position:sticky; top:0;
       z-index:50;
@@ -52,13 +52,13 @@
     nav a{
       text-decoration:none;
       color:var(--text);
-      font-weight:700;
+      font-weight:800;
       font-size:13px;
       margin-left:14px;
     }
     nav a:hover{color:var(--primary)}
 
-    /* Hero */
+    /* HERO */
     header{
       max-width:1100px;
       margin:0 auto;
@@ -98,7 +98,7 @@
       padding:12px 18px;
       border-radius:999px;
       text-decoration:none;
-      font-weight:800;
+      font-weight:900;
       display:inline-flex;
       align-items:center;
       gap:10px;
@@ -108,8 +108,8 @@
     .btn-light{background:#fff; color:var(--text); border:1px solid rgba(0,0,0,.08);}
     .btn:hover{transform:translateY(-1px)}
 
-    /* Sections */
-    .container{max-width:1100px; margin:0 auto; padding:0 16px 80px;}
+    /* SECTIONS */
+    .container{max-width:1100px; margin:0 auto; padding:0 16px 90px;}
     .section-title{
       text-align:center;
       color:var(--primary);
@@ -131,7 +131,7 @@
       border:1px solid rgba(0,0,0,.06);
     }
 
-    /* Services */
+    /* SERVICES */
     .services{
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
@@ -160,23 +160,21 @@
     .service h3{margin:0 0 6px; font-size:16px;}
     .service p{margin:0; color:var(--muted); font-size:13px; line-height:1.35;}
 
-    /* Gallery Photos */
+    /* VIDEO GALLERY */
     .gallery{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(240px,1fr));
+      grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
       gap:14px;
       margin-top:14px;
     }
-    .gallery img{
+    video{
       width:100%;
-      height:240px;
-      object-fit:cover;
       border-radius:16px;
       box-shadow: var(--shadow);
-      background:#ddd;
+      background:#000;
     }
 
-    /* Contact / Map */
+    /* MAP */
     .grid-2{
       display:grid;
       grid-template-columns:1.2fr .8fr;
@@ -194,12 +192,12 @@
 
     iframe{
       width:100%;
-      height:300px;
+      height:320px;
       border:0;
       border-radius:16px;
     }
 
-    /* WhatsApp floating */
+    /* WHATSAPP FLOAT */
     .wsp{
       position:fixed;
       right:18px;
@@ -321,22 +319,27 @@
       </a>
     </div>
 
-    <!-- GALERÍA DE FOTOS -->
-    <h2 id="galeria" class="section-title">Galería</h2>
-    <p class="section-desc">Sube tus fotos al repositorio y ponles estos nombres: <b>foto1.jpg</b>, <b>foto2.jpg</b>, <b>foto3.jpg</b>…</p>
+    <!-- GALERÍA DE VIDEOS -->
+    <h2 id="galeria" class="section-title">Galería de trabajos</h2>
+    <p class="section-desc">Si algún video no se muestra, revisa que el nombre del archivo sea exacto (video5.mp4, video6.mp4, etc.).</p>
 
     <div class="gallery">
-      <img src="foto1.jpg" alt="Trabajo 1">
-      <img src="foto2.jpg" alt="Trabajo 2">
-      <img src="foto3.jpg" alt="Trabajo 3">
-      <img src="foto4.jpg" alt="Trabajo 4">
-      <img src="foto5.jpg" alt="Trabajo 5">
-      <img src="foto6.jpg" alt="Trabajo 6">
+      <video controls src="video1.mp4"></video>
+      <video controls src="video2.mp4"></video>
+      <video controls src="video3.mp4"></video>
+      <video controls src="video4.mp4"></video>
+      <video controls src="video5.mp4"></video>
+      <video controls src="video6.mp4"></video>
+      <video controls src="video7.mp4"></video>
+      <video controls src="video8.mp4"></video>
+      <video controls src="video9.mp4"></video>
+      <video controls src="video10.mp4"></video>
+      <video controls src="video11.mp4"></video>
     </div>
 
     <!-- UBICACIÓN -->
     <h2 id="ubicacion" class="section-title">Ubicación</h2>
-    <p class="section-desc">Santa Anita · Av. 1ro de Mayo 979, Urb. Achirana</p>
+    <p class="section-desc">Av. 1ro de Mayo 979, Urb. Achirana – Santa Anita</p>
 
     <div class="grid-2">
       <div class="card pad">
@@ -352,7 +355,7 @@
           🗺️ Abrir en Google Maps
         </a>
 
-        <p class="mini">Si quieres el pin exacto, me mandas el link de Google Maps y lo dejo perfecto.</p>
+        <p class="mini">Si quieres el pin exacto, copia el link de Google Maps y lo pongo exacto en el mapa.</p>
       </div>
 
       <div class="card pad">
@@ -379,6 +382,7 @@
 
   </div>
 
+  <!-- BOTÓN FLOTANTE -->
   <a class="wsp" target="_blank"
      href="https://wa.me/51977706812?text=Hola%20Angela%20Sal%C3%B3n%20%26%20Spa%20💖%20Quiero%20reservar%20una%20cita%20por%20favor.">
     💬 WhatsApp
